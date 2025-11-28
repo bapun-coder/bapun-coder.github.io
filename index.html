@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pabitra Das Adhikari - Resume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Pabitra Das Adhikari</h1>
+        <p>Student | Programmer | C Developer</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#code">C Programs</a>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a passionate C programmer and MCA student.  
+            This is my simple resume website hosted on GitHub Pages.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li>C Language</li>
+            <li>HTML & CSS</li>
+            <li>DBMS</li>
+            <li>Problem Solving</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Calculator in C</p>
+        <p>File Handling Programs</p>
+    </section>
+
+    <section id="code">
+        <h2>My C Program</h2>
+        <pre><code>
+#include <stdio.h>
+int main() {
+    int a, b;
+    char op;
+    printf("Enter expression (a + b): ");
+    scanf("%d %c %d", &a, &op, &b);
+
+    switch(op){
+        case '+': printf("%d", a+b); break;
+        case '-': printf("%d", a-b); break;
+        case '*': printf("%d", a*b); break;
+        case '/': printf("%d", a/b); break;
+        default : printf("Invalid operator"); 
+    }
+    return 0;
+}
+        </code></pre>
+    </section>
+
+    <footer>
+        <p>© 2025 Pabitra Das Adhikari</p>
+    </footer>
+
+</body>
+</html>
