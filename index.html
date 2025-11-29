@@ -7,58 +7,61 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-
 </head>
+
 <body>
 
-    <header>
-        <h1>Pabitra Das Adhikari</h1>
-        <p>Student | Programmer | C Developer|Future JAVA Programor</p>
-        <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#code1">C Program 1</a>
-    <a href="#code2">C Program 2</a>
-    <a href="#code3">C Program 3</a>
-</nav>
+<header>
+    <img src="myphoto.jpg" alt="Pabitra Photo" class="profile-pic">
+    <h1>Pabitra Das Adhikari</h1>
+    <p>Student | Programmer | C Developer</p>
 
-    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#code1">C Program 1</a>
+        <a href="#code2">C Program 2</a>
+        <a href="#code3">C Program 3</a>
+    </nav>
+</header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>
-            I am a passionate C programmer and MCA student.  
-            This is my simple resume website hosted on GitHub Pages.
-        </p>
-    </section>
 
-    <section id="skills">
-        <h2>My Skills</h2>
-        <ul>
-            <li>C Language</li>
-            <li>HTML & CSS</li>
-            <li>MYSQL AND ORACAL</li>
-            <li>Microsoft Excel and Word </li>
-            <li>Microsoft PowerPoint</li>
-            <li>Adaptability and quick learning </li>
-            <li>Clam under pressure </li>
-            <li>Time management and Responsibility</li>
-        </ul>
-    </section>
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am a passionate C programmer and MCA student.  
+        This is my simple resume website hosted on GitHub Pages.
+    </p>
+</section>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Dynamic memory allocation & display data</p>
-        <p>A Program to Store Employee Details & Generate Salary Slip</p>
-        <p>File Handling Programs</p>
-    </section>
+<section id="skills">
+    <h2>My Skills</h2>
+    <ul>
+        <li>C Language</li>
+        <li>HTML & CSS</li>
+        <li>MYSQL AND ORACAL</li>
+        <li>Microsoft Excel and Word</li>
+        <li>Microsoft PowerPoint</li>
+        <li>Adaptability and Quick Learning</li>
+        <li>Calm Under Pressure</li>
+        <li>Time Management & Responsibility</li>
+    </ul>
+</section>
 
-    <section id="code1">
-    <h2>My C Programs for College Practice</h2>
-    <pre><code class="language-c">#include <stdio.h>
-#include <stdlib.h>
-//Dynamic memory allocation & display data
+<section id="projects">
+    <h2>Projects</h2>
+    <p>Dynamic memory allocation & display data</p>
+    <p>Employee Salary Slip Generator (Structures)</p>
+    <p>File Handling Programs</p>
+</section>
+
+
+<section id="code1">
+<h2>Dynamic Memory Allocation</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
 int main() {
     int n, i;
     int *p;
@@ -74,15 +77,14 @@ int main() {
     free(p);
     return 0;
 }
-    </code></pre>
+</code></pre>
 </section>
-        
-        <section id="code2">
-    <h2><b><i> Write a program to input an Employee's name, age, designation, and basic salary. Consider ta = 35% of basic, da = 60% of basic, hra=33% of basic, pf =12% of basic.
-        <br/>
-               Also calculate gross & net salary. Use a structure to store the Details of multiple persons and generate a salary slip for each.</i></b></h2>
-    <pre><code class="language-c">#include <stdio.h>
-//Program to Store Employee Details & Generate Salary Slip//
+
+
+<section id="code2">
+<h2>Employee Salary Slip Program</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
 struct employee {
     char name[30];
     int age;
@@ -113,7 +115,6 @@ int main() {
         printf("Basic Salary: ");
         scanf("%f", &e[i].basic);
 
-        // Salary calculations
         e[i].ta  = 0.35 * e[i].basic;
         e[i].da  = 0.60 * e[i].basic;
         e[i].hra = 0.33 * e[i].basic;
@@ -123,67 +124,59 @@ int main() {
         e[i].net   = e[i].gross - e[i].pf;
     }
 
-    // Display salary slip
-    printf("\n\n========= SALARY SLIP =========\n");
+    printf("\n========= SALARY SLIP =========\n");
 
     for(i = 0; i < n; i++) {
         printf("\nEmployee %d:\n", i + 1);
-        printf("Name        : %s\n", e[i].name);
-        printf("Age         : %d\n", e[i].age);
-        printf("Designation : %s\n", e[i].designation);
-        printf("Basic       : %.2f\n", e[i].basic);
+        printf("Name: %s\n", e[i].name);
+        printf("Age: %d\n", e[i].age);
+        printf("Designation: %s\n", e[i].designation);
+        printf("Basic: %.2f\n", e[i].basic);
 
-        printf("TA (35%)    : %.2f\n", e[i].ta);
-        printf("DA (60%)    : %.2f\n", e[i].da);
-        printf("HRA (33%)   : %.2f\n", e[i].hra);
-        printf("PF (12%)    : %.2f\n", e[i].pf);
+        printf("TA: %.2f\n", e[i].ta);
+        printf("DA: %.2f\n", e[i].da);
+        printf("HRA: %.2f\n", e[i].hra);
+        printf("PF: %.2f\n", e[i].pf);
 
         printf("Gross Salary: %.2f\n", e[i].gross);
-        printf("Net Salary  : %.2f\n", e[i].net);
-
-        printf("-----------------------------------\n");
+        printf("Net Salary: %.2f\n", e[i].net);
     }
 
     return 0;
 }
-    </code></pre>
+</code></pre>
 </section>
-        
-        <section id="code3">
-    <h2>FILE configering in c laungage </h2>
-    <pre><code class="language-c">#include<stdio.h>
-int main(){
+
+
+<section id="code3">
+<h2>File Reading Program</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
 
  char a[100];
-
  FILE *fp = fopen("Read.txt", "r");
- printf("YOUR DETAILS : %s",a);
- fgets(a,sizeof(a),fp);
- printf("%s",a);
- fgets(a,sizeof(a),fp);
- printf("%s",a);
- fgets(a,sizeof(a),fp);
- printf("%s",a);
 
-// Here Read.txt file contains only three lines:
-// Name: Pabitra Das Adhikari
-// Age: 24
-// Indian
+ fgets(a, sizeof(a), fp);
+ printf("%s", a);
+
+ fgets(a, sizeof(a), fp);
+ printf("%s", a);
+
+ fgets(a, sizeof(a), fp);
+ printf("%s", a);
 
 }
 </code></pre>
 </section>
-        
-    <footer>
+
+
+<footer>
     <p>© 2025 Pabitra Das Adhikari</p>
-    <p>📞 8338913479  |  📧 pabitrad162@gmail.com  |  🔗 <a href="https://linkedin.com/in/pabitra-das-adhikari-22067929b">LinkedIn</a>  |  💻 bapun-coder
-    </p>
+    <p>📞 8338913479 | 📧 pabitrad162@gmail.com  
+    | 🔗 <a href="https://linkedin.com/in/pabitra-das-adhikari-22067929b">LinkedIn</a>  
+    | 💻 bapun-coder</p>
 </footer>
 
 </body>
 </html>
-
-
-
-
-
