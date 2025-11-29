@@ -29,16 +29,19 @@ h2 {
     color: #0078ff;
 }
 
+/* Code block styling */
 pre {
-    background: #2d2d2d;
-    color: #ffffff;
+    background-color: #000;   /* Black background */
+    color: #fff;              /* White text */
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow-x: auto;
+    font-size: 15px;
 }
-footer {
-    text-align: center;
-    padding: 15px;
-    background: #333;
-    color: white;
+
+code {
+    background: none;         /* Remove white box */
+    color: inherit;           /* Same as pre text */
+    font-family: "Courier New", monospace;
 }
+
