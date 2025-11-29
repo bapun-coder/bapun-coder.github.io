@@ -13,10 +13,15 @@ header {
 
 nav a {
     margin: 0 10px;
-    color: white;
     text-decoration: none;
+    color: #fff;
     font-weight: bold;
 }
+
+nav a:hover {
+    color: #00aaff;
+}
+
 
 section {
     padding: 20px;
@@ -40,8 +45,10 @@ pre, pre code, code {
     font-size: 15px !important;
     font-family: "Courier New", monospace !important;
 }
-    /* Make only the code section black */
-    section#code {
+    /* EACH CODE SECTION BACKGROUND */
+section#code1,
+section#code2,
+section#code3 {
     background-color: #000 !important;
     color: #fff !important;
     border-radius: 10px;
@@ -58,6 +65,7 @@ footer {
 footer p {
     margin: 4px 0;
 }
+
 
 
 
