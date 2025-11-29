@@ -44,26 +44,29 @@ section {
 h2 {
     color: #0078ff;
 }
-
-/* CODE BLOCKS */
-pre, pre code, code {
-    background-color: #000 !important;
-    color: #fff !important;
-    padding: 15px !important;
+/* FIXED CODE BLOCKS */
+pre {
+    background: #000 !important;
+    padding: 20px !important;
     border-radius: 10px !important;
     overflow-x: auto !important;
+}
+pre code {
+    background: none !important;
+    color: #fff !important;
     font-size: 15px !important;
     font-family: "Courier New", monospace !important;
+    white-space: pre !important;
 }
-
-/* EACH CODE SECTION DARK */
+/* DARK SECTIONS */
 section#code1,
 section#code2,
 section#code3 {
     background: #000 !important;
     color: #fff !important;
+    border-radius: 10px;
+    padding: 20px;
 }
-
 /* FOOTER */
 footer {
     text-align: center;
@@ -79,4 +82,5 @@ footer a {
 footer p {
     margin: 4px 0;
 }
+
 
