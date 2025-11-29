@@ -4,25 +4,36 @@ body {
     background: #f4f4f4;
 }
 
+/* HEADER */
 header {
     background: #0078ff;
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 30px;
 }
 
+/* PROFILE PHOTO */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    margin-bottom: 15px;
+}
+
+/* NAVBAR */
 nav a {
-    margin: 0 10px;
+    margin: 0 12px;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
 }
-
 nav a:hover {
-    color: #00aaff;
+    color: #00eaff;
 }
 
-
+/* SECTIONS */
 section {
     padding: 20px;
     background: white;
@@ -34,26 +45,26 @@ h2 {
     color: #0078ff;
 }
 
-/* Force dark code block */
+/* CODE BLOCKS */
 pre, pre code, code {
     background-color: #000 !important;
     color: #fff !important;
     padding: 15px !important;
     border-radius: 10px !important;
-    display: block !important;
     overflow-x: auto !important;
     font-size: 15px !important;
     font-family: "Courier New", monospace !important;
 }
-    /* EACH CODE SECTION BACKGROUND */
+
+/* EACH CODE SECTION DARK */
 section#code1,
 section#code2,
 section#code3 {
-    background-color: #000 !important;
+    background: #000 !important;
     color: #fff !important;
-    border-radius: 10px;
-    padding: 20px;
 }
+
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
@@ -61,12 +72,10 @@ footer {
     background: #000;
     margin-top: 20px;
 }
-
+footer a {
+    color: #00aaff;
+    text-decoration: none;
+}
 footer p {
     margin: 4px 0;
 }
-
-
-
-
-
