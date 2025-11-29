@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pabitra Das Adhikari - Resume</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
 </head>
 <body>
 
@@ -32,42 +35,52 @@
         <ul>
             <li>C Language</li>
             <li>HTML & CSS</li>
-            <li>DBMS</li>
-            <li>Problem Solving</li>
+            <li>MYSQL AND ORACAL</li>
+            <li>Microsoft Excel and Word </li>
+            <li>Microsoft PowerPoint</li>
+            <li>Adaptability and quick learning </li>
+            <li>Clam under pressure </li>
+            <li>Time management and Responsibility</li>
         </ul>
     </section>
 
     <section id="projects">
         <h2>Projects</h2>
-        <p>Calculator in C</p>
+        <p>Dynamic memory allocation & display data</p>
         <p>File Handling Programs</p>
     </section>
 
     <section id="code">
-        <h2>My C Program</h2>
-        <pre><code>
+    <h2>My C Programs for College Practice</h2>
+    <pre><code class="language-c">
 #include <stdio.h>
+#include <stdlib.h>
+//Dynamic memory allocation & display data
 int main() {
-    int a, b;
-    char op;
-    printf("Enter expression (a + b): ");
-    scanf("%d %c %d", &a, &op, &b);
-
-    switch(op){
-        case '+': printf("%d", a+b); break;
-        case '-': printf("%d", a-b); break;
-        case '*': printf("%d", a*b); break;
-        case '/': printf("%d", a/b); break;
-        default : printf("Invalid operator"); 
-    }
+    int n, i;
+    int *p;
+    printf("Enter size: ");
+    scanf("%d", &n);
+    p = (int*)malloc(n * sizeof(int));
+    printf("Enter elements:\n");
+    for(i = 0; i < n; i++)
+        scanf("%d", &p[i]);
+    printf("You entered: ");
+    for(i = 0; i < n; i++)
+        printf("%d ", p[i]);
+    free(p);
     return 0;
 }
-        </code></pre>
-    </section>
+    </code></pre>
+</section>
+
 
     <footer>
         <p>© 2025 Pabitra Das Adhikari</p>
+        <br/>
+        <P>� 8338913479  📧  pabitrad162@gmaiI.com 🔗linkedin.com/in/pabitra-das-adhikari-22067929b   💻 bapun-coder </P>
     </footer>
 
 </body>
 </html>
+
