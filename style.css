@@ -29,19 +29,22 @@ h2 {
     color: #0078ff;
 }
 
-/* Code block styling */
-pre {
-    background-color: #000;   /* Black background */
-    color: #fff;              /* White text */
-    padding: 15px;
-    border-radius: 10px;
-    overflow-x: auto;
-    font-size: 15px;
+/* Force dark code block */
+pre, pre code, code {
+    background-color: #000 !important;
+    color: #fff !important;
+    padding: 15px !important;
+    border-radius: 10px !important;
+    display: block !important;
+    overflow-x: auto !important;
+    font-size: 15px !important;
+    font-family: "Courier New", monospace !important;
 }
-
-code {
-    background: none;         /* Remove white box */
-    color: inherit;           /* Same as pre text */
-    font-family: "Courier New", monospace;
+    /* Make only the code section black */
+    section#code {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-radius: 10px;
+    padding: 20px;
 }
 
