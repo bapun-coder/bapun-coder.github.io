@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pabitra Das Adhikari - Resume</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
@@ -13,6 +14,7 @@
 
 <header>
     <img src="myphoto.jpg" alt="Pabitra Photo" class="profile-pic">
+
     <h1>Pabitra Das Adhikari</h1>
     <p>Student | Programmer | C Developer</p>
 
@@ -24,11 +26,26 @@
         <a href="#code2">C Program 2</a>
         <a href="#code3">C Program 3</a>
     </nav>
+
+    <!-- 3-dot menu -->
+    <div class="menu-btn" onclick="toggleMenu()">⋮</div>
+
+    <div id="dropdownMenu" class="dropdown">
+        <p class="menu-title">Student | Programmer | C Developer</p>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#code1">C Program 1</a>
+        <a href="#code2">C Program 2</a>
+        <a href="#code3">C Program 3</a>
+        <a href="resume.pdf" download>Download Resume</a>
+    </div>
+
     <a class="resume-btn" href="resume.pdf" download>Download Resume</a>
 </header>
 
-
-<section id="about">
+<!-- Sections with animation class -->
+<section id="about" class="fade-section">
     <h2>About Me</h2>
     <p>
         I am a passionate C programmer and MCA student.  
@@ -36,7 +53,7 @@
     </p>
 </section>
 
-<section id="skills">
+<section id="skills" class="fade-section">
     <h2>My Skills</h2>
     <ul>
         <li>C Language</li>
@@ -50,18 +67,18 @@
     </ul>
 </section>
 
-<section id="projects">
+<section id="projects" class="fade-section">
     <h2>Projects</h2>
     <p>Dynamic memory allocation & display data</p>
     <p>Employee Salary Slip Generator (Structures)</p>
     <p>File Handling Programs</p>
 </section>
 
-
-<section id="code1">
+<section id="code1" class="fade-section">
 <h2>Dynamic Memory Allocation</h2>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
+<pre><code class="language-c">
+#include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     int n, i;
@@ -81,10 +98,10 @@ int main() {
 </code></pre>
 </section>
 
-
-<section id="code2">
+<section id="code2" class="fade-section">
 <h2>Employee Salary Slip Program</h2>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
+<pre><code class="language-c">
+#include <stdio.h>
 
 struct employee {
     char name[30];
@@ -148,10 +165,10 @@ int main() {
 </code></pre>
 </section>
 
-
-<section id="code3">
+<section id="code3" class="fade-section">
 <h2>File Reading Program</h2>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
+<pre><code class="language-c">
+#include <stdio.h>
 
 int main() {
 
@@ -171,7 +188,6 @@ int main() {
 </code></pre>
 </section>
 
-
 <footer>
     <p>© 2025 Pabitra Das Adhikari</p>
     <p>📞 8338913479 | 📧 pabitrad162@gmail.com  
@@ -179,7 +195,42 @@ int main() {
     | 💻 https://github.com/bapun-coder</p>
 </footer>
 
+
+<!-- ==========================
+     JAVASCRIPT FOR ANIMATIONS
+=========================== -->
+<script>
+    /* 3-dot menu toggle */
+    function toggleMenu() {
+        const menu = document.getElementById("dropdownMenu");
+        menu.classList.toggle("show");
+    }
+
+    /* Close dropdown when clicking outside */
+    document.addEventListener("click", function(event) {
+        const menu = document.getElementById("dropdownMenu");
+        const button = document.querySelector(".menu-btn");
+
+        if (!menu.contains(event.target) && !button.contains(event.target)) {
+            menu.classList.remove("show");
+        }
+    });
+
+    /* Reveal sections on scroll */
+    const sections = document.querySelectorAll(".fade-section");
+
+    function reveal() {
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                section.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", reveal);
+    window.addEventListener("load", reveal);
+</script>
+
 </body>
 </html>
-
-
