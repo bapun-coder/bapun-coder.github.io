@@ -1,14 +1,7 @@
-/* PAGE FADE-IN */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #f4f4f4;
-    animation: pageFade 0.7s ease-in-out;
-}
-
-@keyframes pageFade {
-    from { opacity: 0; }
-    to { opacity: 1; }
 }
 
 /* HEADER */
@@ -16,7 +9,7 @@ header {
     background: #0078ff;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     position: relative;
 }
 
@@ -30,22 +23,60 @@ header {
     margin-bottom: 10px;
 }
 
-/* NAVBAR */
-nav a {
-    margin: 0 12px;
+/* TAGLINE */
+.tagline {
+    margin-top: -10px;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* 3-DOT MENU BUTTON */
+.menu-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    user-select: none;
+}
+
+/* DROPDOWN MENU */
+.dropdown {
+    position: absolute;
+    top: 55px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 200px;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.dropdown a {
+    display: block;
+    padding: 8px;
+    color: #0078ff;
     text-decoration: none;
-    color: #fff;
     font-weight: bold;
-    display: inline-block;
-    transition: 0.25s ease;
+    border-radius: 6px;
 }
 
-nav a:hover {
-    color: #00eaff;
-    transform: scale(1.05);
+.dropdown a:hover {
+    background: #e5f2ff;
 }
 
-/* SECTIONS */
+/* DROPDOWN HEADING */
+.menu-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* CONTENT SECTIONS */
 section {
     padding: 20px;
     background: white;
@@ -55,18 +86,6 @@ section {
 
 h2 {
     color: #0078ff;
-}
-
-/* SCROLL FADE-UP ANIMATION */
-.fade-section {
-    opacity: 0;
-    transform: translateY(25px);
-    transition: 0.6s ease;
-}
-
-.fade-section.show {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* CODE BLOCKS */
@@ -84,31 +103,11 @@ pre code {
     font-family: "Courier New", monospace !important;
 }
 
-/* BLACK CODE SECTIONS */
 section#code1,
 section#code2,
 section#code3 {
-    background: #000 !important;
-    color: #fff !important;
-}
-
-/* RESUME BUTTON */
-.resume-btn {
-    display: inline-block;
-    margin-top: 15px;
-    background: #00eaff;
-    color: #000;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: 0.25s ease;
-}
-
-.resume-btn:hover {
-    background: #fff;
-    color: #0078ff;
-    transform: scale(1.05);
+    background: #000;
+    color: #fff;
 }
 
 /* FOOTER */
@@ -123,71 +122,4 @@ footer {
 footer a {
     color: #00aaff;
     text-decoration: none;
-}
-
-footer p {
-    margin: 4px 0;
-}
-
-/* THREE DOT MENU BUTTON */
-.menu-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
-    user-select: none;
-}
-
-/* DROPDOWN MENU */
-.dropdown {
-    position: absolute;
-    top: 55px;
-    right: 20px;
-    background: white;
-    padding: 15px 10px;
-    border-radius: 10px;
-    width: 200px;
-    display: none;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 999;
-    animation: fadeOut 0.2s ease-in-out forwards;
-}
-
-.dropdown.show {
-    display: block !important;
-    animation: slideDown 0.25s ease-out forwards;
-}
-
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px) scale(0.95); }
-    to   { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to   { opacity: 0; transform: translateY(-10px); }
-}
-
-.dropdown a {
-    display: block;
-    padding: 8px;
-    color: #0078ff;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: 0.25s ease;
-}
-
-.dropdown a:hover {
-    background: #e5f2ff;
-    transform: translateX(5px);
-}
-
-.menu-title {
-    font-size: 14px;
-    font-weight: bold;
-    color: #444;
-    margin-bottom: 10px;
 }
