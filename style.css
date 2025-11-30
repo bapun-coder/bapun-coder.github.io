@@ -67,6 +67,21 @@ section#code3 {
     border-radius: 10px;
     padding: 20px;
 }
+/*for resume download*/ 
+.resume-btn {
+    display: inline-block;
+    margin-top: 12px;
+    background: #00eaff;
+    color: #000;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.resume-btn:hover {
+    background: #fff;
+    color: #0078ff;
+}
 /* FOOTER */
 footer {
     text-align: center;
@@ -82,5 +97,6 @@ footer a {
 footer p {
     margin: 4px 0;
 }
+
 
 
