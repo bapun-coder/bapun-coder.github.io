@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pabitra Das Adhikari - Resume</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 </head>
 
 <body>
 
 <header>
-
-    <!-- THREE DOT MENU -->
     <div class="menu-btn" onclick="toggleMenu()">⋮</div>
 
     <div id="dropdownMenu" class="dropdown">
-        <p class="menu-title">Menu</p>
+        <p class="menu-title">Student | Programmer | C Developer</p>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -25,32 +25,27 @@
         <a href="resume.pdf" download>Download Resume</a>
     </div>
 
-    <!-- HERO SECTION -->
-    <div class="hero">
-        <img src="myphoto.jpg" class="profile-left" alt="Pabitra Photo">
-
-        <div class="hero-text">
-            <h1>Pabitra Das Adhikari</h1>
-            <p>Student | Programmer | C Developer</p>
-        </div>
-    </div>
-
+    <img src="myphoto.jpg" alt="Pabitra Photo" class="profile-pic">
+    <h1>Pabitra Das Adhikari</h1>
+    <p class="tagline">Student | Programmer | C Developer</p>
 </header>
 
 
-<!-- HIDDEN SECTIONS (Visible only when clicked) -->
-<section id="about" class="hidden">
+<section id="about">
     <h2>About Me</h2>
-    <p>I am a passionate C programmer and MCA student.</p>
+    <p>
+        I am a passionate C programmer and MCA student.  
+        This is my simple resume website hosted on GitHub Pages.
+    </p>
 </section>
 
-<section id="skills" class="hidden">
+<section id="skills">
     <h2>My Skills</h2>
     <ul>
         <li>C Language</li>
         <li>HTML & CSS</li>
         <li>MYSQL AND ORACAL</li>
-        <li>Microsoft Excel & Word</li>
+        <li>Microsoft Excel and Word</li>
         <li>Microsoft PowerPoint</li>
         <li>Adaptability and Quick Learning</li>
         <li>Calm Under Pressure</li>
@@ -58,16 +53,17 @@
     </ul>
 </section>
 
-<section id="projects" class="hidden">
+<section id="projects">
     <h2>Projects</h2>
-    <p>Dynamic Memory Allocation</p>
-    <p>Employee Salary Slip Generator</p>
+    <p>Dynamic memory allocation & display data</p>
+    <p>Employee Salary Slip Generator (Structures)</p>
     <p>File Handling Programs</p>
 </section>
 
-<section id="code1" class="hidden">
+
+<section id="code1">
 <h2>Dynamic Memory Allocation</h2>
-<pre><code>
+<pre><code class="language-c">
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -77,20 +73,24 @@ int main() {
     printf("Enter size: ");
     scanf("%d", &n);
     p = (int*)malloc(n * sizeof(int));
+    printf("Enter elements:\n");
     for(i = 0; i < n; i++)
         scanf("%d", &p[i]);
+    printf("You entered: ");
     for(i = 0; i < n; i++)
         printf("%d ", p[i]);
     free(p);
+    return 0;
 }
 </code></pre>
 </section>
 
-<section id="code2" class="hidden">
+
+<section id="code2">
 <h2>Employee Salary Slip Program</h2>
-<pre><code>
+<pre><code class="language-c">
 #include <stdio.h>
-//Program to Store Employee Details & Generate Salary Slip//
+
 struct employee {
     char name[30];
     int age;
@@ -121,7 +121,6 @@ int main() {
         printf("Basic Salary: ");
         scanf("%f", &e[i].basic);
 
-        // Salary calculations
         e[i].ta  = 0.35 * e[i].basic;
         e[i].da  = 0.60 * e[i].basic;
         e[i].hra = 0.33 * e[i].basic;
@@ -131,44 +130,59 @@ int main() {
         e[i].net   = e[i].gross - e[i].pf;
     }
 
-    // Display salary slip
-    printf("\n\n========= SALARY SLIP =========\n");
+    printf("\n========= SALARY SLIP =========\n");
 
     for(i = 0; i < n; i++) {
         printf("\nEmployee %d:\n", i + 1);
-        printf("Name        : %s\n", e[i].name);
-        printf("Age         : %d\n", e[i].age);
-        printf("Designation : %s\n", e[i].designation);
-        printf("Basic       : %.2f\n", e[i].basic);
+        printf("Name: %s\n", e[i].name);
+        printf("Age: %d\n", e[i].age);
+        printf("Designation: %s\n", e[i].designation);
+        printf("Basic: %.2f\n", e[i].basic);
 
-        printf("TA (35%)    : %.2f\n", e[i].ta);
-        printf("DA (60%)    : %.2f\n", e[i].da);
-        printf("HRA (33%)   : %.2f\n", e[i].hra);
-        printf("PF (12%)    : %.2f\n", e[i].pf);
+        printf("TA: %.2f\n", e[i].ta);
+        printf("DA: %.2f\n", e[i].da);
+        printf("HRA: %.2f\n", e[i].hra);
+        printf("PF: %.2f\n", e[i].pf);
 
         printf("Gross Salary: %.2f\n", e[i].gross);
-        printf("Net Salary  : %.2f\n", e[i].net);
-
-        printf("-----------------------------------\n");
+        printf("Net Salary: %.2f\n", e[i].net);
     }
 
     return 0;
 }
-        
 </code></pre>
 </section>
 
-<section id="code3" class="hidden">
+
+<section id="code3">
 <h2>File Reading Program</h2>
-<pre><code>
-... your code ...
+<pre><code class="language-c">
+#include <stdio.h>
+
+int main() {
+    char a[100];
+    FILE *fp = fopen("Read.txt", "r");
+
+    fgets(a, sizeof(a), fp);
+    printf("%s", a);
+
+    fgets(a, sizeof(a), fp);
+    printf("%s", a);
+
+    fgets(a, sizeof(a), fp);
+    printf("%s", a);
+}
 </code></pre>
 </section>
 
 
 <footer>
     <p>© 2025 Pabitra Das Adhikari</p>
+    <p>📞 8338913479 | 📧 pabitrad162@gmail.com  
+    | 🔗 <a href="https://linkedin.com/in/pabitra-das-adhikari-22067929b">LinkedIn</a>  
+    | 💻 https://github.com/bapun-coder</p>
 </footer>
+
 
 <script>
 function toggleMenu() {
@@ -176,16 +190,15 @@ function toggleMenu() {
     menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
 
-// Show section only when clicked from menu
-document.querySelectorAll(".dropdown a").forEach(link => {
-    link.addEventListener("click", () => {
-        document.querySelectorAll("section").forEach(sec => sec.classList.add("hidden"));
-        const target = document.querySelector(link.getAttribute("href"));
-        if (target) target.classList.remove("hidden");
-    });
+document.addEventListener("click", function(event) {
+    const menu = document.getElementById("dropdownMenu");
+    const button = document.querySelector(".menu-btn");
+
+    if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.style.display = "none";
+    }
 });
 </script>
 
 </body>
 </html>
-
