@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pabitra Das Adhikari - Resume</title>
-
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
@@ -13,21 +12,6 @@
 <body>
 
 <header>
-    <img src="myphoto.jpg" alt="Pabitra Photo" class="profile-pic">
-
-    <h1>Pabitra Das Adhikari</h1>
-    <p>Student | Programmer | C Developer</p>
-
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#code1">C Program 1</a>
-        <a href="#code2">C Program 2</a>
-        <a href="#code3">C Program 3</a>
-    </nav>
-
-    <!-- 3-dot menu -->
     <div class="menu-btn" onclick="toggleMenu()">⋮</div>
 
     <div id="dropdownMenu" class="dropdown">
@@ -41,11 +25,13 @@
         <a href="resume.pdf" download>Download Resume</a>
     </div>
 
-    <a class="resume-btn" href="resume.pdf" download>Download Resume</a>
+    <img src="myphoto.jpg" alt="Pabitra Photo" class="profile-pic">
+    <h1>Pabitra Das Adhikari</h1>
+    <p class="tagline">Student | Programmer | C Developer</p>
 </header>
 
-<!-- Sections with animation class -->
-<section id="about" class="fade-section">
+
+<section id="about">
     <h2>About Me</h2>
     <p>
         I am a passionate C programmer and MCA student.  
@@ -53,7 +39,7 @@
     </p>
 </section>
 
-<section id="skills" class="fade-section">
+<section id="skills">
     <h2>My Skills</h2>
     <ul>
         <li>C Language</li>
@@ -67,14 +53,15 @@
     </ul>
 </section>
 
-<section id="projects" class="fade-section">
+<section id="projects">
     <h2>Projects</h2>
     <p>Dynamic memory allocation & display data</p>
     <p>Employee Salary Slip Generator (Structures)</p>
     <p>File Handling Programs</p>
 </section>
 
-<section id="code1" class="fade-section">
+
+<section id="code1">
 <h2>Dynamic Memory Allocation</h2>
 <pre><code class="language-c">
 #include <stdio.h>
@@ -98,7 +85,8 @@ int main() {
 </code></pre>
 </section>
 
-<section id="code2" class="fade-section">
+
+<section id="code2">
 <h2>Employee Salary Slip Program</h2>
 <pre><code class="language-c">
 #include <stdio.h>
@@ -165,28 +153,28 @@ int main() {
 </code></pre>
 </section>
 
-<section id="code3" class="fade-section">
+
+<section id="code3">
 <h2>File Reading Program</h2>
 <pre><code class="language-c">
 #include <stdio.h>
 
 int main() {
+    char a[100];
+    FILE *fp = fopen("Read.txt", "r");
 
- char a[100];
- FILE *fp = fopen("Read.txt", "r");
+    fgets(a, sizeof(a), fp);
+    printf("%s", a);
 
- fgets(a, sizeof(a), fp);
- printf("%s", a);
+    fgets(a, sizeof(a), fp);
+    printf("%s", a);
 
- fgets(a, sizeof(a), fp);
- printf("%s", a);
-
- fgets(a, sizeof(a), fp);
- printf("%s", a);
-
+    fgets(a, sizeof(a), fp);
+    printf("%s", a);
 }
 </code></pre>
 </section>
+
 
 <footer>
     <p>© 2025 Pabitra Das Adhikari</p>
@@ -196,40 +184,20 @@ int main() {
 </footer>
 
 
-<!-- ==========================
-     JAVASCRIPT FOR ANIMATIONS
-=========================== -->
 <script>
-    /* 3-dot menu toggle */
-    function toggleMenu() {
-        const menu = document.getElementById("dropdownMenu");
-        menu.classList.toggle("show");
+function toggleMenu() {
+    const menu = document.getElementById("dropdownMenu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+document.addEventListener("click", function(event) {
+    const menu = document.getElementById("dropdownMenu");
+    const button = document.querySelector(".menu-btn");
+
+    if (!menu.contains(event.target) && !button.contains(event.target)) {
+        menu.style.display = "none";
     }
-
-    /* Close dropdown when clicking outside */
-    document.addEventListener("click", function(event) {
-        const menu = document.getElementById("dropdownMenu");
-        const button = document.querySelector(".menu-btn");
-
-        if (!menu.contains(event.target) && !button.contains(event.target)) {
-            menu.classList.remove("show");
-        }
-    });
-
-    /* Reveal sections on scroll */
-    const sections = document.querySelectorAll(".fade-section");
-
-    function reveal() {
-        sections.forEach(section => {
-            const rect = section.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
-                section.classList.add("show");
-            }
-        });
-    }
-
-    window.addEventListener("scroll", reveal);
-    window.addEventListener("load", reveal);
+});
 </script>
 
 </body>
